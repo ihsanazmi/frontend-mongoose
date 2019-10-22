@@ -28,17 +28,17 @@ class Header extends Component {
     }
 
     renderNavigation = ()=>{
-        if(!this.props._email){
+        if(!this.props._username){
             return (
                 <Nav className="ml-auto">
                     <NavItem>
-                        <NavLink tag = {Link} className="nav-link" to ="/login">
-                            <button className="btn btn-outline-success">Register</button>
+                        <NavLink tag = {Link} className="" to ="/login">
+                            <button className="btn btn-outline-success">Login</button>
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink tag = {Link} className="nav-link" to ="/register">
-                            <button className="btn btn-outline-info">Login</button>
+                            <button className="btn btn-outline-info">Register</button>
                         </NavLink>
                     </NavItem>
 
@@ -48,7 +48,7 @@ class Header extends Component {
             return (
                 <Nav className="ml-auto">
                     <NavItem>
-                        <NavLink tag = {Link} className="nav-link" to ="/">Task</NavLink>
+                        <NavLink tag = {Link} className="" to ="/">Task</NavLink>
                     </NavItem>
 
                     <UncontrolledDropdown>
@@ -85,8 +85,7 @@ class Header extends Component {
 
 const mapStateToProps = (state)=>{
     return {
-        _email: state.auth.email,
-        _id: state.auth.id,
+        _id: state.auth._id,
         _username: state.auth.username
     }
 }
