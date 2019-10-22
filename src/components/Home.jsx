@@ -6,9 +6,11 @@ class Home extends Component {
 
     getTask = ()=>{
         let userid = this.props._id
-        axios.get('https://bdg-mongoose-kumis.herokuapp.com/task/'+ '5da930850058142dc02bd0f7')
+        axios.get('http://localhost:2020/task/'+ userid)
             .then((res)=>{
                 console.log(res.data)
+            }).catch((err)=>{
+                console.log(err)
             })
     }
 
@@ -25,7 +27,7 @@ class Home extends Component {
                             </span>
                         </li>
                     </ul>
-                    {this.getTask()}
+                    {/* {this.getTask()} */}
                     
                     <form className="form-group mt-5">
                         <input type="text" className="form-control" placeholder="What do you want to do?"/>
