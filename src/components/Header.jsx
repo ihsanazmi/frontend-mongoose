@@ -30,7 +30,7 @@ class Header extends Component {
     renderNavigation = ()=>{
         if(!this.props._username){
             return (
-                <Nav className="ml-auto">
+                <Nav className="ml-auto" navbar>
                     <NavItem>
                         <NavLink tag = {Link} className="" to ="/login">
                             <button className="btn btn-outline-success">Login</button>
@@ -46,9 +46,9 @@ class Header extends Component {
             )
         }else{
             return (
-                <Nav className="ml-auto">
+                <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink tag = {Link} className="" to ="/">Task</NavLink>
+                        <NavLink tag = {Link} to ="/">Task</NavLink>
                     </NavItem>
 
                     <UncontrolledDropdown>
@@ -73,7 +73,7 @@ class Header extends Component {
                 <Navbar color="light" light expand="md">
                     <Link className="navbar-brand" to ="/">Mongoose db</Link>
                     <NavbarToggler onClick={this.toogle}/>
-                    <Collapse isOpen = {this.state.isOpen}/>
+                    <Collapse isOpen = {this.state.isOpen} navbar/>
 
                         {this.renderNavigation()}
 
