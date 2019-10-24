@@ -36,7 +36,8 @@ class Home extends Component {
             }
         ).then(res=>{
         //    alert('Task Berhasil di tambah')
-           this.getTask()
+            this.task.value = ''
+            this.getTask()
         }).catch(err=>{
             console.log({err})
         })

@@ -9,7 +9,7 @@ import {
     NavbarToggler,
     Nav,
     NavLink,
-    NavItem, Button,
+    NavItem,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -30,7 +30,7 @@ class Header extends Component {
     renderNavigation = ()=>{
         if(!this.props._username){
             return (
-                <Nav className="ml-auto" navbar>
+                <Nav className="ml-auto mr-5" navbar>
                     <NavItem>
                         <NavLink tag = {Link} className="" to ="/login">
                             <button className="btn btn-outline-success">Login</button>
@@ -46,7 +46,7 @@ class Header extends Component {
             )
         }else{
             return (
-                <Nav className="ml-auto" navbar>
+                <Nav className="ml-auto mr-5" navbar>
                     <NavItem>
                         <NavLink tag = {Link} to ="/">Task</NavLink>
                     </NavItem>
@@ -58,7 +58,13 @@ class Header extends Component {
 
                         <DropdownMenu>
                             <DropdownItem>
-                                <Button className="dropdown-item" onClick={this.props.logOut}>Logout</Button>
+                                <NavLink tag={Link} className="dropdown-item" to='/profile'>Profile</NavLink>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <NavLink tag={Link} className="dropdown-item" to='/editProfile'>Edit Profile</NavLink>
+                            </DropdownItem>
+                            <DropdownItem>
+                                <NavLink className="dropdown-item" onClick={this.props.logOut}>Logout</NavLink>
                             </DropdownItem>
                         </DropdownMenu>
                     </UncontrolledDropdown>
